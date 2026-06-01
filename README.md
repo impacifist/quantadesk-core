@@ -14,13 +14,27 @@ and operator state are intentionally excluded.
 
 ## Project Page
 
-Open the static project page:
+Open the public project page:
+
+```text
+https://impacifist.github.io/quantadesk-core/
+```
+
+The static page also works locally:
 
 ```text
 index.html
 ```
 
 No build step is required. The page can be served directly by GitHub Pages.
+
+## Project Links
+
+- Project page: <https://impacifist.github.io/quantadesk-core/>
+- Latest release: <https://github.com/impacifist/quantadesk-core/releases/latest>
+- Roadmap issues: <https://github.com/impacifist/quantadesk-core/issues?q=is%3Aissue+is%3Aopen+label%3Atype%3Aroadmap>
+- Milestones: <https://github.com/impacifist/quantadesk-core/milestones>
+- Security boundary: [docs/security-boundary.md](docs/security-boundary.md)
 
 ## What This Public Version Covers
 
