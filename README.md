@@ -55,6 +55,7 @@ No build step is required. The page can be served directly by GitHub Pages.
 ├── .github/
 │   ├── ISSUE_TEMPLATE/
 │   └── workflows/
+├── CHANGELOG.md
 ├── LICENSE
 └── PUBLICATION_CHECKLIST.md
 ```
