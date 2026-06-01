@@ -1,0 +1,132 @@
+name: Public safety checks
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  public-safety:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Scan for private material
+        shell: python
+        run: |
+          from __future__ import annotations
+
+          import re
+          from pathlib import Path
+
+          root = Path(".")
+          skipped_dirs = {
+              ".git",
+              ".github/workflows",
+              "node_modules",
+              ".venv",
+              "venv",
+              "__pycache__",
+          }
+          binary_suffixes = {
+              ".png",
+              ".jpg",
+              ".jpeg",
+              ".webp",
+              ".gif",
+              ".ico",
+              ".pdf",
+              ".zip",
+          }
+          denied_roots = {
+              "config/strategies",
+              "docs/research",
+              "private",
+              "private-strategies",
+              "strategies-private",
+              "research-private",
+              "market-lists",
+              "live-candidates",
+              "data",
+              "logs",
+              "storage",
+              "reports",
+              "backups",
+          }
+          denied_terms = {
+              "paper_candidate",
+              "micro_live",
+              "live candidate",
+              "watchlist",
+              "grid_trading",
+              "pair_spread",
+              "order_flow_imbalance",
+              "market_breadth",
+              "lead_lag",
+              "accumulation",
+              "breakout",
+              "sharpe",
+          }
+          secret_assignment = re.compile(
+              r"(?i)\b(api[_-]?key|api[_-]?secret|secret|passphrase|token|password|private[_ -]?key)\b"
+              r"\s*[:=]\s*['\"]?[^'\"\s]+"
+          )
+
+          findings: list[str] = []
+
+          for path in sorted(root.rglob("*")):
+              if path.is_dir():
+                  continue
+              rel = path.as_posix()
+              rel_lower = rel.lower()
+              if any(rel_lower == item or rel_lower.startswith(f"{item}/") for item in skipped_dirs):
+                  continue
+              if any(rel_lower == item or rel_lower.startswith(f"{item}/") for item in denied_roots):
+                  findings.append(f"denied path: {rel}")
+                  continue
+              if path.suffix.lower() in binary_suffixes:
+                  continue
+              try:
+                  text = path.read_text(encoding="utf-8")
+              except UnicodeDecodeError:
+                  continue
+
+              lowered = text.lower()
+              for term in sorted(denied_terms):
+                  if term in lowered:
+                      findings.append(f"denied term '{term}' in {rel}")
+              if secret_assignment.search(text):
+                  findings.append(f"possible secret assignment in {rel}")
+
+          if findings:
+              print("Public safety check failed:")
+              for item in findings:
+                  print(f"- {item}")
+              raise SystemExit(1)
+
+          print("Public safety check passed.")
+
+      - name: Check static page files
+        shell: python
+        run: |
+          from pathlib import Path
+
+          required = [
+              "index.html",
+              "styles.css",
+              "assets/hero-workstation.png",
+              "README.md",
+              "LICENSE",
+              "docs/roadmap.md",
+              "docs/security-boundary.md",
+              "docs/usage.md",
+          ]
+          missing = [path for path in required if not Path(path).exists()]
+          if missing:
+              print("Missing required public files:")
+              for path in missing:
+                  print(f"- {path}")
+              raise SystemExit(1)
+          print("Required public files are present.")

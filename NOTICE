@@ -1,0 +1,7 @@
+QuantaDesk
+Copyright 2026 QuantaDesk contributors
+
+This public package contains a generated hero image at
+`assets/hero-workstation.png`. The image was created for the sanitized public
+project page and intentionally avoids readable trading data, exchange names,
+ticker symbols, private strategy names, and operator account state.

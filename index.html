@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="QuantaDesk is a local-first trading research and operator workstation for data checks, backtests, paper evidence, risk gates, and auditable reports."
+    />
+    <meta name="theme-color" content="#101820" />
+    <meta property="og:title" content="QuantaDesk" />
+    <meta
+      property="og:description"
+      content="A local-first trading research workstation for evidence, reports, risk gates, and operator control."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/hero-workstation.png" />
+    <title>QuantaDesk | Local-First Trading Research Workstation</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero" id="top">
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="#top" aria-label="QuantaDesk home">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span>QuantaDesk</span>
+        </a>
+        <div class="nav-links">
+          <a href="#purpose">Purpose</a>
+          <a href="#workflow">Workflow</a>
+          <a href="#usage">Use</a>
+          <a href="#roadmap">Roadmap</a>
+          <a href="#docs">Docs</a>
+        </div>
+      </nav>
+
+      <div class="hero-copy">
+        <p class="eyebrow">Open-source core. Private strategies by design.</p>
+        <h1>
+          <span>Local-first</span>
+          <span>trading research,</span>
+          <span>evidence-first</span>
+          <span>operator control.</span>
+        </h1>
+        <p class="hero-text">
+          <span>Move from market data to backtests,</span>
+          <span>paper evidence, risk gates, and reports</span>
+          <span>before any live execution.</span>
+        </p>
+        <div class="hero-actions" aria-label="Page shortcuts">
+          <a class="button primary" href="#usage">Start locally</a>
+          <a class="button secondary" href="#roadmap">View roadmap</a>
+        </div>
+      </div>
+
+      <div class="hero-strip" aria-label="Project principles">
+        <span>Self-hosted</span>
+        <span>Audit-first</span>
+        <span>Fail-closed live controls</span>
+        <span>Strategy plug-in boundary</span>
+      </div>
+    </header>
+
+    <main>
+      <section class="section intro" id="purpose">
+        <div class="section-kicker">Purpose</div>
+        <div class="two-column">
+          <div>
+            <h2>A safer bridge between experiments and operation.</h2>
+          </div>
+          <div class="copy-stack">
+            <p>
+              Trading tools often split research notebooks, scripts, dashboards,
+              and live controls into separate worlds. QuantaDesk treats them as one
+              evidence pipeline: collect data, test ideas, review risk, observe
+              paper behavior, and only then consider operational use.
+            </p>
+            <p>
+              The public project is intentionally centered on infrastructure:
+              local data handling, backtest plumbing, operator workflows,
+              reporting, safety checks, and extension points. Private strategies,
+              parameter sets, private market lists, live credentials, and
+              proprietary research artifacts stay outside the open-source
+              boundary.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section band" id="workflow">
+        <div class="section-kicker">Workflow</div>
+        <h2>Evidence before action.</h2>
+        <div class="workflow-grid" aria-label="QuantaDesk workflow stages">
+          <article class="workflow-step">
+            <span>01</span>
+            <h3>Collect</h3>
+            <p>Build local archives and inspect data coverage before testing.</p>
+          </article>
+          <article class="workflow-step">
+            <span>02</span>
+            <h3>Backtest</h3>
+            <p>Run event-driven simulations with the same risk concepts used later.</p>
+          </article>
+          <article class="workflow-step">
+            <span>03</span>
+            <h3>Review</h3>
+            <p>Attach run cards, warnings, validation checks, and decision notes.</p>
+          </article>
+          <article class="workflow-step">
+            <span>04</span>
+            <h3>Paper</h3>
+            <p>Observe behavior in a controlled mode before operational promotion.</p>
+          </article>
+          <article class="workflow-step">
+            <span>05</span>
+            <h3>Gate</h3>
+            <p>Keep live controls blocked until readiness and risk gates agree.</p>
+          </article>
+          <article class="workflow-step">
+            <span>06</span>
+            <h3>Report</h3>
+            <p>Export operator-readable summaries, ledgers, and audit records.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section usage" id="usage">
+        <div class="section-kicker">Usage</div>
+        <div class="usage-layout">
+          <div>
+            <h2>Run it as a private local workstation.</h2>
+            <p>
+              The open-source release will be designed for local research first.
+              Use demo strategies and sample data while keeping exchange keys and
+              private strategy modules in your own environment.
+            </p>
+          </div>
+          <div class="terminal" aria-label="Local quick start commands">
+            <div class="terminal-bar">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <pre><code>git clone https://github.com/your-org/quantadesk-core.git
+cd quantadesk-core
+
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+pip install -e ".[dev,webui]"
+
+python -m quantadesk.main webui --host 127.0.0.1 --port 8090</code></pre>
+          </div>
+        </div>
+
+        <div class="usage-list" aria-label="Common product surfaces">
+          <div>
+            <h3>Operator console</h3>
+            <p>Check status, readiness, risk state, reports, and runtime health.</p>
+          </div>
+          <div>
+            <h3>Backtest workspace</h3>
+            <p>Launch controlled simulations, compare runs, and inspect warnings.</p>
+          </div>
+          <div>
+            <h3>Private extension point</h3>
+            <p>Load your own strategy package without publishing implementation details.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section boundary">
+        <div class="section-kicker">Open Boundary</div>
+        <div class="boundary-layout">
+          <div>
+            <h2>What the public project includes.</h2>
+            <ul class="check-list">
+              <li>Local WebUI shell and operator workflow.</li>
+              <li>Backtest engine, run-card format, reports, and safety gates.</li>
+              <li>Risk controls, kill-switch patterns, and audit logging.</li>
+              <li>Demo strategies that explain the interface without real edge.</li>
+              <li>Documentation for writing private strategy plug-ins.</li>
+            </ul>
+          </div>
+          <div>
+            <h2>What stays private.</h2>
+            <ul class="check-list muted">
+              <li>Proprietary strategy modules and parameter sets.</li>
+              <li>Research notes, rankings, private market lists, and operational candidates.</li>
+              <li>Market archives, journals, exchange credentials, and operator state.</li>
+              <li>Any evidence artifact that reveals selection logic or live intent.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section roadmap" id="roadmap">
+        <div class="section-kicker">Roadmap</div>
+        <h2>Public release plan.</h2>
+        <div class="timeline">
+          <article>
+            <span>Phase 0</span>
+            <h3>Sanitized public foundation</h3>
+            <p>
+              Create a clean-history public repository, remove private research,
+              publish the project page, and add leakage checks to CI.
+            </p>
+          </article>
+          <article>
+            <span>Phase 1</span>
+            <h3>Local operator console</h3>
+            <p>
+              Ship a focused WebUI for onboarding, API setup guidance, status,
+              paper mode, reports, and emergency controls.
+            </p>
+          </article>
+          <article>
+            <span>Phase 2</span>
+            <h3>Backtest and reporting kit</h3>
+            <p>
+              Provide demo data, toy strategies, run cards, equity curves,
+              drawdown views, CSV exports, and reproducible result bundles.
+            </p>
+          </article>
+          <article>
+            <span>Phase 3</span>
+            <h3>Private strategy plug-ins</h3>
+            <p>
+              Document a stable plug-in API so private strategies can be loaded
+              locally while the public repository stays generic.
+            </p>
+          </article>
+          <article>
+            <span>Phase 4</span>
+            <h3>Deployment readiness</h3>
+            <p>
+              Add self-host templates, health checks, backups, restore drills,
+              auth hardening, and private-network deployment guidance.
+            </p>
+          </article>
+          <article>
+            <span>Phase 5</span>
+            <h3>Model-assisted review</h3>
+            <p>
+              Keep model output advisory: explain risks, summarize evidence,
+              request quarantine, and never place orders or increase risk.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section docs-section" id="docs">
+        <div class="section-kicker">Docs</div>
+        <h2>Publish with the boundary intact.</h2>
+        <div class="docs-grid">
+          <a href="docs/usage.md">
+            <span>Usage</span>
+            <p>How the public core is intended to run as a local workstation.</p>
+          </a>
+          <a href="docs/roadmap.md">
+            <span>Roadmap</span>
+            <p>The phased plan for the clean public release and future core.</p>
+          </a>
+          <a href="docs/security-boundary.md">
+            <span>Security Boundary</span>
+            <p>What stays public, what stays private, and why history matters.</p>
+          </a>
+          <a href="docs/publishing.md">
+            <span>Publishing</span>
+            <p>How to move this package into a clean GitHub repository.</p>
+          </a>
+          <a href="PUBLICATION_CHECKLIST.md">
+            <span>Checklist</span>
+            <p>Pre-publication checks for leaks, screenshots, docs, and files.</p>
+          </a>
+        </div>
+      </section>
+
+      <section class="section closing">
+        <div>
+          <p class="eyebrow">Research software, not financial advice.</p>
+          <h2>QuantaDesk is built for patient operators.</h2>
+          <p>
+            The goal is not to promise a strategy. The goal is to make evidence,
+            safety, and operational discipline harder to skip.
+          </p>
+        </div>
+        <a class="button primary" href="#top">Back to top</a>
+      </section>
+    </main>
+  </body>
+</html>

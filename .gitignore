@@ -1,0 +1,42 @@
+# Secrets and local runtime state
+.env
+.env.*
+!.env.example
+secrets/
+*.key
+*.pem
+
+# Private strategy and research material
+private/
+private-strategies/
+strategies-private/
+research-private/
+market-lists/
+live-candidates/
+
+# Generated or local-only data
+data/
+logs/
+storage/
+reports/
+backups/
+*.parquet
+*.duckdb
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+*.db
+
+# Tooling
+node_modules/
+.venv/
+venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
