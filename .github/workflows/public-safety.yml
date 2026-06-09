@@ -119,7 +119,6 @@ jobs:
               "assets/hero-workstation.png",
               "README.md",
               "LICENSE",
-              "docs/roadmap.md",
               "docs/security-boundary.md",
               "docs/usage.md",
           ]

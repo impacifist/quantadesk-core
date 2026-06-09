@@ -26,7 +26,7 @@ Use this checklist before making the public QuantaDesk repository visible.
 ## Suggested First Release
 
 - Static project page.
-- Public roadmap.
+- Public project page and security-boundary documentation.
 - Usage overview.
 - Security and public/private boundary document.
 - License.

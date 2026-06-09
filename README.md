@@ -32,9 +32,18 @@ No build step is required. The page can be served directly by GitHub Pages.
 
 - Project page: <https://impacifist.github.io/quantadesk-core/>
 - Latest release: <https://github.com/impacifist/quantadesk-core/releases/latest>
-- Roadmap issues: <https://github.com/impacifist/quantadesk-core/issues?q=is%3Aissue+is%3Aopen+label%3Atype%3Aroadmap>
-- Milestones: <https://github.com/impacifist/quantadesk-core/milestones>
 - Security boundary: [docs/security-boundary.md](docs/security-boundary.md)
+
+## Latest Public-Safe Update
+
+The private workstation has moved forward with a more complete operator WebUI:
+mobile layout improvements, dark-mode support, a chart workspace, role-aware
+navigation, user-facing reports, stronger session handling, and fail-closed live
+control patterns.
+
+This public repository documents those product surfaces without publishing
+production strategies, parameter files, performance claims, private market
+lists, server addresses, credentials, or operator state.
 
 ## What This Public Version Covers
 
@@ -43,7 +52,7 @@ No build step is required. The page can be served directly by GitHub Pages.
 - Run-card, audit, and evidence-first product language.
 - Risk gate and fail-closed live-control philosophy.
 - Documentation for the public/private strategy boundary.
-- Roadmap for a clean open-source core.
+- Public-safe status of the operator console and extension boundary.
 
 ## What This Public Version Does Not Include
 
@@ -62,7 +71,6 @@ No build step is required. The page can be served directly by GitHub Pages.
 ├── assets/
 │   └── hero-workstation.png
 ├── docs/
-│   ├── roadmap.md
 │   ├── security-boundary.md
 │   ├── publishing.md
 │   └── usage.md

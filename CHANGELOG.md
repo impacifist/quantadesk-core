@@ -2,13 +2,31 @@
 
 All notable public changes to QuantaDesk will be documented in this file.
 
+## [0.1.1] - 2026-06-09
+
+### Changed
+
+- Updated the public page to describe the current operator-console surface:
+  chart workspace, mobile layout polish, dark-mode direction, reports, session
+  handling, and fail-closed live-control patterns.
+- Removed public planning navigation from the project page so the public surface
+  stays focused on current product boundaries and documentation.
+- Clarified that production strategies, parameter files, performance claims,
+  server addresses, credentials, and operator evidence remain excluded.
+
+### Security
+
+- Kept this update documentation-only. No private strategy source, generated
+  strategy files, research result bundles, credentials, runtime state, account
+  identifiers, or deployment addresses are included.
+
 ## [0.1.0] - 2026-06-01
 
 ### Added
 
 - Initial clean-history public repository for QuantaDesk.
 - Static project page for GitHub Pages.
-- Public roadmap, usage guide, publishing guide, and security-boundary notes.
+- Usage guide, publishing guide, and security-boundary notes.
 - Publication checklist for keeping private strategy material out of the public
   repository.
 - Bug report and feature request templates.
